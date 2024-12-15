@@ -1,0 +1,14 @@
+<div class="btn-group" role="group">
+    <input type="radio" class="btn-check" [name]="'unit-' + cityIndex" id="celsius-{{ cityIndex }}"
+        [checked]="unit === 'celsius'" (change)="toggleUnit('celsius')" />
+    <label class="btn btn-outline-primary" [for]="'celsius-' + cityIndex"
+        [ngClass]="{ 'btn-selected': unit === 'celsius' }">
+        °C
+    </label>
+    <input type="radio" class="btn-check" [name]="'unit-' + cityIndex" id="fahrenheit-{{ cityIndex }}"
+        [checked]="unit === 'fahrenheit'" (change)="toggleUnit('fahrenheit')" />
+    <label class="btn btn-outline-primary" [for]="'fahrenheit-' + cityIndex"
+        [ngClass]="{ 'btn-selected': unit === 'fahrenheit' }">
+        °F
+    </label>
+</div>

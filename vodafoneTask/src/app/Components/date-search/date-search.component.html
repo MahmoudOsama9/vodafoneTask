@@ -1,0 +1,9 @@
+<div class="date-search-container">
+  <div class="date-input-group">
+    <input type="date" class="search-input form-control" [(ngModel)]="searchDate" (ngModelChange)="onDateChange()"
+      [class.is-valid]="searchDate" placeholder="Select a date" aria-label="Date search" />
+    <button class="clear-date-button" (click)="clearDate()" *ngIf="searchDate" aria-label="Clear date">
+      <i class="bi bi-x"></i>
+    </button>
+  </div>
+</div>

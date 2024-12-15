@@ -1,0 +1,56 @@
+.not-found-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6CA6CD, #4682B4);
+  color: white;
+  padding: 20px;
+}
+
+.weather-icon {
+  font-size: 80px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #4682B4;
+  padding: 10px 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 120px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 32px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.lead {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 18px;
+}

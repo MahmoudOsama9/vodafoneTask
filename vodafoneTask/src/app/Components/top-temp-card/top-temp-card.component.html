@@ -1,0 +1,20 @@
+<div class="highest-temp-card">
+  <div class="card-header">
+    <div class="header-text">
+      <span class="icon"><i class="fa fa-sun-o"></i></span>
+      <span class="title">Highest Temperature</span>
+    </div>
+    <span class="badge">HIGHEST</span>
+  </div>
+  <div class="card-body">
+    <div class="location-info">
+      <span class="location-icon"><i class="fa fa-map-marker"></i></span>
+      <h2 class="city">{{ weatherData.city }}</h2>
+    </div>
+    <p class="temperature">{{ highestTemp }} °C</p>
+    <div class="date-info">
+      <span class="date-icon"><i class="fa fa-calendar"></i></span>
+      <p class="date">{{ highestTempDate | date: 'EEE, MMM d, yyyy' }}</p>
+    </div>
+  </div>
+</div>

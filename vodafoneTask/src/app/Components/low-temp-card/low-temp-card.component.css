@@ -1,0 +1,63 @@
+.low-temp-card {
+  background: linear-gradient(45deg, #2980b9, #6dd5fa);
+  border-radius: 12px;
+  color: #fff;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header-text {
+  display: flex;
+  align-items: center;
+}
+
+.header-text .title {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+.card-body {
+  padding-left: 10px;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.city {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.temperature {
+  font-size: 3em;
+  margin: 15px 0;
+}
+
+.date-info {
+  margin-top: 10px;
+}
+
+.date {
+  font-size: 0.9em;
+  margin: 0;
+  color: #fff;
+}

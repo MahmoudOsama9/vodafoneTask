@@ -1,0 +1,109 @@
+.weather-container {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.weather-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.city-title {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.unit-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toggle-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+  background: white;
+  color: #6a11cb;
+}
+
+.weather-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.weather-table th,
+.weather-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.weather-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #444;
+}
+
+.weather-table tr:last-child td {
+  border-bottom: none;
+}
+
+.humidity-wrapper {
+  position: relative;
+  background: #f0f0f0;
+  border-radius: 10px;
+  height: 24px;
+  overflow: hidden;
+}
+
+.humidity-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+  transition: width 0.3s ease;
+}
+
+.humidity-wrapper span {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 0 8px;
+  line-height: 24px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .card-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .weather-table {
+    font-size: 0.9rem;
+  }
+}

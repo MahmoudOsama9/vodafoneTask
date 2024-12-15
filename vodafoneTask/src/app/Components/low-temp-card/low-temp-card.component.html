@@ -1,0 +1,17 @@
+<div class="low-temp-card">
+  <div class="card-header">
+    <div class="header-text">
+      <span class="title">Lowest Temperature</span>
+    </div>
+    <span class="badge">LOWEST</span>
+  </div>
+  <div class="card-body">
+    <div class="location-info">
+      <h2 class="city">{{ weatherData.city }}</h2>
+    </div>
+    <p class="temperature">{{ lowestTemp }} °C</p>
+    <div class="date-info">
+      <p class="date">{{ lowestTempDate | date: 'EEE, MMM d, yyyy' }}</p>
+    </div>
+  </div>
+</div>

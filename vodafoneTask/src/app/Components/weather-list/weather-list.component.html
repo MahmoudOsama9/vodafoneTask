@@ -1,0 +1,69 @@
+<div class="weather-list-container">
+  <app-search-container (searchUpdated)="onSearchUpdated($event)"></app-search-container>
+  <div class="loading-container" *ngIf="loading">
+    <p>Loading weather data...</p>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div class="container" *ngIf="!loading && !errorMessage && weatherData.length > 0">
+    <div class="row justify-content-center">
+      <div class="col-md-auto">
+        <app-top-temp-card *ngIf="cityWithHighestMaxTemp" [weatherData]="cityWithHighestMaxTemp"
+          [highestTemp]="highestTemperature" [highestTempDate]="highestTemperatureDate">
+        </app-top-temp-card>
+      </div>
+      <div class="col-md-auto">
+        <app-low-temp-card *ngIf="cityWithLowestMinTemp" [weatherData]="cityWithLowestMinTemp"
+          [lowestTemp]="lowestTemperature" [lowestTempDate]="lowestTemperatureDate"></app-low-temp-card>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && !errorMessage && filteredWeatherData.length > 0" class="row">
+    <div class="weather-container col-md-3" *ngFor="let singleWeatherData of filteredWeatherData; let i = index">
+      <div class="weather-card">
+        <div class="card-header">
+          <h2 class="city-title">{{ singleWeatherData.city }}</h2>
+          <div class="unit-toggle">
+            <button [class.active]="singleWeatherData.selectedUnit === 'celsius'"
+              (click)="handleUnitChange('celsius', singleWeatherData)" class="toggle-btn">°C</button>
+            <button [class.active]="singleWeatherData.selectedUnit === 'fahrenheit'"
+              (click)="handleUnitChange('fahrenheit', singleWeatherData)" class="toggle-btn">°F</button>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="weather-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let forecast of singleWeatherData.forecast">
+                <td>{{ forecast.date }}</td>
+                <td>{{ getTemperatureByUnit(
+                  forecast.temperatureCelsius,
+                  forecast.temperatureFahrenheit,
+                  singleWeatherData
+                  ) }}</td>
+                <td>
+                  <div class="humidity-wrapper">
+                    <div class="humidity-bar" [style.width]="forecast.humidity + '%'"></div>
+                    <span>{{ forecast.humidity }}%</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="!loading && !errorMessage && filteredWeatherData.length === 0">No weather data found.</p>
+</div>
